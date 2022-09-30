@@ -1,0 +1,60 @@
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("skhd"
+ (filename . "~/.config/skhd/skhdrc")
+ (front-context-string . "s\n# ctrl - retur")
+ (rear-context-string)
+ (position . 14))
+("yabai"
+ (filename . "~/.config/yabai/yabairc")
+ (front-context-string . "#!/usr/bin/env s")
+ (rear-context-string)
+ (position . 1))
+("fusama"
+ (filename . "~/.config/fusuma/config.yml")
+ (front-context-string . "swipe:\n  3:\n    ")
+ (rear-context-string)
+ (position . 1))
+("qtile"
+ (filename . "~/.config/qtile/config.py")
+ (front-context-string . "from libqtile.co")
+ (rear-context-string)
+ (position . 1))
+("bashtop"
+ (filename . "~/.config/bashtop/bashtop.cfg")
+ (front-context-string . "#? Config file f")
+ (rear-context-string)
+ (position . 1))
+("htop"
+ (filename . "~/.config/htop/htoprc")
+ (front-context-string . "# Beware! This f")
+ (rear-context-string)
+ (position . 1))
+("paru"
+ (filename . "~/.config/paru/paru.conf")
+ (front-context-string . "#\n# $PARU_CONF\n#")
+ (rear-context-string)
+ (position . 1))
+("picom"
+ (filename . "~/.config/picom/picom.conf")
+ (front-context-string . "################")
+ (rear-context-string)
+ (position . 1))
+("dunst"
+ (filename . "~/.config/dunst/dunstrc")
+ (front-context-string . "[global]\n    ###")
+ (rear-context-string)
+ (position . 1))
+("alacritty"
+ (filename . "~/.config/alacritty/alacritty.yml")
+ (front-context-string . "colors:\n  primar")
+ (rear-context-string)
+ (position . 1))
+("fish"
+ (filename . "~/.config/fish/config.fish")
+ (front-context-string . "if status is-int")
+ (rear-context-string)
+ (position . 1))
+)

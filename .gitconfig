@@ -1,0 +1,14 @@
+[user]
+	name = gordon.lee@okg.com
+	email = gordon.lee@okg.com
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
+[github]
+	user = g0rdonL
+[push]
+	default = current
+[core]
+	editor = vim
+	autocrlf = input

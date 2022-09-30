@@ -1,0 +1,13 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[status]
+	showUntrackedFiles = no
+[remote "origin"]
+	url = git@github.com:g0rdonL/dotfiles.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	pushRemote = origin
+	remote = origin
+	merge = refs/heads/main

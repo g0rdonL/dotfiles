@@ -1,0 +1,3 @@
+[git_branch]
+truncation_length = 14
+truncation_symbol = ""
