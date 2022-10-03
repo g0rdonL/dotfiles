@@ -4,6 +4,7 @@
 set argtextobj
 set clipboard+=unnamed
 set commentary
+set dialogescape=off
 set hlsearch
 set highlightedyank
 set history
@@ -26,6 +27,8 @@ set which-key
 
 "" -- Vim Navigation --
 imap jk <esc>
+imap Jk <esc>
+imap JK <esc>
 nnoremap w [w
 nnoremap e ]w
 nnoremap b [b
