@@ -5,7 +5,9 @@ set -g fish_greeting
 switch (uname)
     case Darwin
         fish_add_path /usr/local/opt/ruby/bin
-	export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-8.jdk/Contents/Home/jre
+        fish_add_path /opt/homebrew/bin
+	export JAVA_HOME=/opt/homebrew/Cellar/openjdk/19.0.2
+        set -gx PATH $JAVA_HOME/bin $PATH
         set -gx LDFLAGS -L/usr/local/opt/ruby/lib
         set -gx CPPFLAGS -I/usr/local/opt/ruby/include
         export HOMEBREW_NO_EMOJI=1
@@ -64,7 +66,7 @@ abbr --add --global se sudo_emacs
 abbr --add --global es 'rm -rf ~/.emacs.d/.local/straight && doom sync'
 abbr --add --global et 'emacsclient -t'
 abbr --add --global ga 'git add'
-abbr --add --global gb 'git checkout'
+abbr --add --global gb 'git checkout -b'
 abbr --add --global gc 'git commit -m'
 abbr --add --global gca 'git commit -a -m'
 abbr --add --global gdm 'git branch --merged | egrep -v "(^\*|main|dev)" | xargs git branch -d'
@@ -82,3 +84,6 @@ abbr --add --global v vim
 
 thefuck --alias | source
 starship init fish | source
+
+# Created by `pipx` on 2022-11-28 09:05:37
+set PATH $PATH /Users/gordonlee/.local/bin

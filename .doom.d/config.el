@@ -9,6 +9,11 @@
               (if (= 1 (length (window-list frame)))
                   (delete-frame frame force)
                 (delete-window window))))
+;; (setq user-emacs-directory "~/.emacs.d/")
+(setq user-emacs-directory "/Users/gordonlee/meili/gordon.lee_dacs_at_okg.com/110/Documents/emacs.d/")
+(setq default-directory "/Users/gordonlee/meili/gordon.lee_dacs_at_okg.com/110")
+(load user-init-file)
+
 
 ;; Fonts
 (setq doom-font (font-spec :family "VictorMono Nerd Font" :size 14)

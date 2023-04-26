@@ -150,6 +150,11 @@ map <leader>; <action>(GotoAction)
 let g:WhichKeyDesc_enter_command = '<leader>; Enter Command'
 map <leader>~ <action>(ReopenClosedTab)
 let g:WhichKeyDesc_switch_to_last_buffer1 = '<leader>~ Switch to Last Buffer'
+" replace currently selected text with default register without yanking it
+vnoremap p "0p
+vnoremap P "0P
+" dont move coursor after yank
+vmap y ygv<Esc>
 
 "" -- Buffer --
 let g:WhichKeyDesc_buffer = '<leader>b +buffer'
@@ -340,6 +345,8 @@ let g:WhichKeyDesc_open_leader = '<leader>o +open'
 
 
 nmap <leader>od <Action>(ActivateDebugToolWindow)
+let g:WhichKeyDesc_open_debug = '<leader>od Open Debug'
+nmap <leader>oD <Action>(ActivateDatabaseToolWindow)
 let g:WhichKeyDesc_open_debug = '<leader>od Open Debug'
 nmap <Leader>of <Action>(EditSourceInNewWindow)
 let g:WhichKeyDesc_new_window = '<leader>of New window'
