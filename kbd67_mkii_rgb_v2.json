@@ -1,9 +1,27 @@
 {
   "name": "KBD67 MkII RGB V2",
   "vendorProductId": 1262621221,
+  "macros": [
+    "STROTC-",
+    "[PROD][100%]{KC_ENT}",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
   "layers": [
     [
-      "KC_GESC",
+      "KC_GRV",
       "KC_1",
       "KC_2",
       "KC_3",
@@ -80,7 +98,7 @@
       "KC_RGHT"
     ],
     [
-      "KC_GESC",
+      "KC_TRNS",
       "KC_F1",
       "KC_F2",
       "KC_F3",
@@ -120,8 +138,8 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-      "KC_TRNS",
-      "MACRO00",
+      "MACRO(1)",
+      "MACRO(0)",
       "KC_NO",
       "KC_NO",
       "KC_PGDN",
@@ -310,5 +328,6 @@
       "KC_TRNS",
       "KC_TRNS"
     ]
-  ]
+  ],
+  "encoders": []
 }

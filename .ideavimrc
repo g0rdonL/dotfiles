@@ -352,6 +352,8 @@ nmap <Leader>of <Action>(EditSourceInNewWindow)
 let g:WhichKeyDesc_new_window = '<leader>of New window'
 nmap <Leader>oF <Action>(OpenProjectWindows)
 let g:WhichKeyDesc_select_window = '<leader>oF Select window'
+nmap <Leader>om <Action>(Maven.ExecuteGoal)
+let g:WhichKeyDesc_maven_exec = '<leader>om Maven Execute'
 noremap <Leader>op :<C-u>NERDTreeToggle<CR>
 let g:WhichKeyDesc_project_sidebar = '<leader>op Toggle Project View'
 noremap <Leader>oP :<C-u>NERDTreeFind<CR>
