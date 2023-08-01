@@ -274,6 +274,8 @@ map <leader>gb <action>(Git.Branches)
 let g:WhichKeyDesc_switch_branch = '<leader>gb Switch Branch'
 map <leader>gB <action>(Annotate)
 let g:WhichKeyDesc_blame = '<leader>gB Blame'
+map <leader>gh <action>(Vcs.ShowTabbedFileHistory)
+let g:WhichKeyDesc_git_history = '<leader>gh Git History'
 
 let g:WhichKeyDesc_git_create_leader = '<leader>gc +create'
 map <leader>gcb <action>(Git.CreateNewBranch)

@@ -38,6 +38,9 @@ end
 export GOPATH=$HOME/dev/go
 export QT_QPA_PLATFORMTHEME=qt5ct
 
+if type -q nvim
+    alias vim=nvim
+end
 
 alias parurg=paru_remove_grep
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
@@ -73,7 +76,9 @@ abbr --add --global gdm 'git branch --merged | egrep -v "(^\*|main|dev)" | xargs
 abbr --add --global gf 'git fetch'
 abbr --add --global gl 'git log'
 abbr --add --global gm 'git merge'
-abbr --add --global gp 'git push -u'
+abbr --add --global gp 'git pull'
+abbr --add --global gP 'git push'
+abbr --add --global gPf 'git push -f'
 abbr --add --global gs 'git status'
 abbr --add --global grh 'git fetch && git reset --hard @{u}'
 abbr --add --global grs 'git reset --soft HEAD~'
