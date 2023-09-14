@@ -33,6 +33,12 @@ nnoremap w [w
 nnoremap e ]w
 nnoremap b [b
 nnoremap ge ]b
+
+nnoremap cw c[w
+nnoremap ce c]w
+nnoremap cb c[b
+nnoremap cge c]b
+
 vnoremap w [w
 vnoremap e ]w
 vnoremap b [b
