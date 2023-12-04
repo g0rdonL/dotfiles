@@ -2,6 +2,9 @@ if status is-interactive
     pfetch
 end
 set -g fish_greeting 
+source ~/.profile
+if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
+
 switch (uname)
     case Darwin
         fish_add_path /usr/local/opt/ruby/bin
@@ -80,6 +83,7 @@ abbr --add --global gp 'git pull'
 abbr --add --global gP 'git push'
 abbr --add --global gPf 'git push -f'
 abbr --add --global gs 'git status'
+abbr --add --global gsu 'git set-upstream'
 abbr --add --global grh 'git fetch && git reset --hard @{u}'
 abbr --add --global grs 'git reset --soft HEAD~'
 abbr --add --global s systemctl
@@ -87,8 +91,13 @@ abbr --add --global gcco 'gcc -g -Wall -Wextra -o'
 abbr --add --global gccc 'gcc -g -Wall -Wextra -c'
 abbr --add --global v vim
 
-thefuck --alias | source
-starship init fish | source
+fundle plugin 'dracula/fish'
+fundle plugin 'patrickf1/fzf.fish'
+fundle plugin 'andreiborisov/sponge'
+fundle plugin 'jorgebucaran/autopair.fish'
+fundle plugin 'pure-fish/pure'
+fundle init
 
-# Created by `pipx` on 2022-11-28 09:05:37
-set PATH $PATH /Users/gordonlee/.local/bin
+
+thefuck --alias | source
+
