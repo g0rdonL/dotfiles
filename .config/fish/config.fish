@@ -74,9 +74,11 @@ abbr --add --global et 'emacsclient -t'
 abbr --add --global ga 'git add'
 abbr --add --global gb 'git checkout -b'
 abbr --add --global gc 'git commit -m'
+abbr --add --global gcp 'git cherry-pick'
 abbr --add --global --set-cursor gca 'git commit -am "%"'
 abbr --add --global gdm 'git branch --merged | egrep -v "(^\*|main|dev)" | xargs git branch -d'
 abbr --add --global gf 'git fetch'
+abbr --add --global --set-cursor gg 'git grep "%" $(git rev-list --all)'
 abbr --add --global gl 'git log'
 abbr --add --global gm 'git merge'
 abbr --add --global gp 'git pull'
@@ -86,9 +88,10 @@ abbr --add --global gs 'git status'
 abbr --add --global gsu 'git set-upstream'
 abbr --add --global grh 'git fetch && git reset --hard @{u}'
 abbr --add --global grs 'git reset --soft HEAD~'
-abbr --add --global s systemctl
 abbr --add --global gcco 'gcc -g -Wall -Wextra -o'
 abbr --add --global gccc 'gcc -g -Wall -Wextra -c'
+abbr --add --global --set-cursor l 'lark "%"'
+abbr --add --global s systemctl
 abbr --add --global v vim
 
 fundle plugin 'dracula/fish'

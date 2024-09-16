@@ -288,6 +288,8 @@ map <leader>gcb <action>(Git.CreateNewBranch)
 let g:WhichKeyDesc_create_branch = '<leader>gcb Branch'
 map <leader>gcc <action>(Git.Commit.Stage)
 let g:WhichKeyDesc_create_commit = '<leader>gcc Commit'
+map <leader>gcC <action>(GitShowDiffWithBranchAction)
+let g:WhichKeyDesc_show_diff = '<leader>gcC Compare'
 map <leader>gcf <action>(Git.Fixup.To.Commit)
 let g:WhichKeyDesc_create_fixup = '<leader>gcf Fixup'
 map <leader>gcp <action>(Github.Create.Pull.Request)
