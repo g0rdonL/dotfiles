@@ -1,0 +1,9 @@
+__patch:
+# Rx: lotem/rime-octagram-data:customize:schema=jyut6ping3,model=hant {
+  - patch/+:
+      __include: grammar:/hant
+# }
+# Rx: canclid/rime-cantonese-schemes:install:scheme=yale {
+  - patch/+:
+      __include: jyut6ping3_romanisation_patch:/yale
+# }

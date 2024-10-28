@@ -1,0 +1,438 @@
+" Cheatsheet https://gist.github.com/zuzhi/07282ae5bcf37647ac25bd254e3f8d69
+" IdeaVim actionslist https://gist.github.com/zchee/9c78f91cc5ad771c1f5d
+
+set argtextobj
+set clipboard+=unnamed
+set commentary
+set dialogescape=off
+set hlsearch
+set highlightedyank
+set history
+set ideajoin
+set idearefactormode=
+set ideavimsupport=visual
+set ignorecase
+set incsearch
+set matchpairs
+set multiple-cursors
+set NERDTree
+set notimeout
+set number
+set iskeyword-=_
+set smartcase
+set scrolloff=9999
+set surround
+set wrapscan
+set which-key
+
+"" -- Vim Navigation --
+imap jk <esc>
+imap Jk <esc>
+imap JK <esc>
+nnoremap w [w
+nnoremap e ]w
+nnoremap b [b
+nnoremap ge ]b
+
+nnoremap cw c[w
+nnoremap ce c]w
+nnoremap cb c[b
+nnoremap cge c]b
+
+vnoremap w [w
+vnoremap e ]w
+vnoremap b [b
+vnoremap ge ]b
+map s <Action>(Find)
+
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+map <M-r> <C-r>
+
+" Insert newline above
+nnoremap [<Space> O<Esc>j
+vnoremap [<Space> <Esc>O<Esc>j
+let g:WhichKeyDesc_insert_newline_above = '[<Space> Insert newline above'
+" Insert newline below
+nnoremap ]<Space> o<Esc>k
+vnoremap ]<Space> <Esc>o<Esc>k
+let g:WhichKeyDesc_insert_newline_below = ']<Space> Insert newline below'
+
+nmap zM <Action>(CollapseAllRegions)
+nmap zm <Action>(CollapseRegion)
+nmap zR <Action>(ExpandAllRegions)
+nmap zr <Action>(ExpandRegion)
+
+" doom-escape-hook
+nnoremap <Esc> :<C-u>nohl<CR>:<C-u>action HideAllWindows<CR><Esc>
+
+" Go to first character
+inoremap <C-a> <Esc>I
+cnoremap <C-a> <Home>
+" Go left
+inoremap <C-b> <Left>
+" Delete character
+inoremap <C-d> <Del>
+" Go to end of line
+inoremap <C-e> <Esc>A
+cnoremap <C-e> <End>
+" Go right
+inoremap <C-f> <Right>
+" Unbind C-g
+noremap <C-g> <Esc>
+inoremap <C-g> <Nop>
+" Delete to line end
+inoremap <C-k> <Esc>:action EditorDeleteToLineEnd<CR>a
+" Go down
+inoremap <C-n> <Down>
+" Go up
+inoremap <C-p> <Up>
+" Go to previous word
+inoremap <A-b> <Esc>:action EditorPreviousWord<CR>i
+" Go to next word
+inoremap <A-f> <Esc>:action EditorNextWord<CR>a
+
+" Show error description
+map <C-c>!h <Action>(ShowErrorDescription)
+
+let mapleader = " "
+let g:argtextobj_pairs = '(:),{:},[:]'
+let g:NERDTreeMapActivateNode = 'l'
+let g:NERDTreeMapPreview = '<Nop>'
+let g:NERDTreeMapOpenInTab = 'oo'
+let g:NERDTreeMapOpenInTabSilent = '<Nop>'
+let g:NERDTreeMapOpenSplit = 'os'
+let g:NERDTreeMapPreviewSplit = '<Nop>'
+let g:NERDTreeMapOpenVSplit = 'ov'
+let g:NERDTreeMapPreviewVSplit = '<Nop>'
+let g:NERDTreeMapOpenRecursively = '<Nop>'
+let g:NERDTreeMapCloseDir = 'h'
+let g:NERDTreeMapCloseChildren = '<Nop>'
+let g:NERDTreeMapJumpRoot = '<Nop>'
+let g:NERDTreeMapJumpParent = 'K'
+let g:NERDTreeMapJumpFirstChild = '<Nop>'
+let g:NERDTreeMapJumpLastChild = '<Nop>'
+let g:NERDTreeMapJumpNextSibling = 'L'
+let g:NERDTreeMapJumpPrevSibling = 'H'
+let g:NERDTreeMapRefresh = '<Nop>'
+let g:NERDTreeMapRefreshRoot = 'gr'
+let g:NERDTreeMapMenu = '<Nop>'
+let g:NERDTreeMapToggleZoom = '<Nop>'
+
+nmap [[ <action>(EditorBackwardParagraph)
+vmap [[ <action>(EditorBackwardParagraphWithSelection)
+let g:WhichKeyDesc_go_to_prev_paragraph = '[[ Go to Previous Paragraph'
+nmap ]] <action>(EditorForwardParagraph)
+vmap ]] <action>(EditorForwardParagraphWithSelection)
+let g:WhichKeyDesc_go_to_next_paragraph = ']] Go to Next Paragraph'
+nmap gD <action>(ShowUsages)
+let g:WhichKeyDesc_jump_to_ref1 = 'gD Jump to References'
+
+let g:WhichKey_DefaultDelay = 200
+let g:WhichKey_ShowVimActions = 'true'
+
+"" -- Previous --
+nmap [e <action>(GotoPreviousError)
+let g:WhichKeyDesc_go_to_prev_error = '[e Go to Previous Error'
+
+"" -- Next --
+let g:WhichKeyDesc_next_leader = '] +next'
+nmap ]e <action>(GotoNextError)
+let g:WhichKeyDesc_go_to_next_error = '[e Go to Next Error'
+
+"" -- General --
+map <leader><cr> <action>(ActivateBookmarksToolWIndow)
+let g:WhichKeyDesc_jump_to_bookmark = '<leader>⏎ Jump to Bookmark'
+map <leader>* viw<action>(GotoSymbol)
+let g:WhichKeyDesc_show_usages= '<leader>* Search for Symbol'
+map <leader>, <action>(Switcher)
+let g:WhichKeyDesc_switch_buffer = '<leader>, Switch Buffer'
+map <leader>. <action>(GotoFile)
+let g:WhichKeyDesc_find_file1 = '<leader>. Find File'
+map <leader>/ <action>(FindInPath)
+let g:WhichKeyDesc_search= '<leader>/ Search'
+map <leader>; <action>(GotoAction)
+let g:WhichKeyDesc_enter_command = '<leader>; Enter Command'
+map <leader>~ <action>(ReopenClosedTab)
+let g:WhichKeyDesc_switch_to_last_buffer1 = '<leader>~ Switch to Last Buffer'
+" replace currently selected text with default register without yanking it
+vnoremap p "0p
+vnoremap P "0P
+" dont move coursor after yank
+vmap y ygv<Esc>
+
+"" -- Buffer --
+let g:WhichKeyDesc_buffer = '<leader>b +buffer'
+map <leader>b[ <action>(ReopenClosedTab)
+let g:WhichKeyDesc_prev_buffer1 = '<leader>b[ Previous Buffer'
+map <leader>b] <action>(ReopenClosedTab)
+let g:WhichKeyDesc_next_buffer1 = '<leader>b] Next Buffer'
+map <leader>bb <action>(RecentFiles)
+let g:WhichKeyDesc_switch_buffer = '<leader>bb Switch Buffer'
+map <leader>bc <action>(SplitVertically)
+let g:WhichKeyDesc_clone_buffer = '<leader>bc Clone Buffer'
+map <leader>bC <action>(EditSourceInNewWindow)
+let g:WhichKeyDesc_clone_buffer_in_new_window = '<leader>bC Clone Buffer in New Window'
+map <leader>bd <action>(CloseContent)
+let g:WhichKeyDesc_kill_buffer1 = '<leader>bd Kill Buffer'
+map <leader>bk <action>(CloseContent)
+let g:WhichKeyDesc_kill_buffer2 = '<leader>bk Kill buffer'
+map <leader>bK <action>(CloseAllEditors)
+let g:WhichKeyDesc_kill_all_buffers = '<leader>bK Kill All Buffers'
+map <leader>bl <action>(ReopenClosedTab)
+let g:WhichKeyDesc_switch_to_last_buffer2 = '<leader>bl Switch to Last Buffer'
+map <leader>bn <action>(ReopenClosedTab)
+let g:WhichKeyDesc_next_buffer2 = '<leader>bn Next Buffer'
+map <leader>bN <action>(NewScratchBuffer)
+let g:WhichKeyDesc_new_empty_buffer = '<leader>bN New Empty Buffer'
+map <leader>bO <action>(CloseAllEditorsButActive)
+let g:WhichKeyDesc_kill_other_buffers = '<leader>bO Kill Other Buffers'
+map <leader>bp <action>(ReopenClosedTab)
+let g:WhichKeyDesc_prev_buffer2 = '<leader>bp Previous Buffer'
+map <leader>br zz
+let g:WhichKeyDesc_revert_buffer = '<leader>br Revert Buffer'
+noremap <leader>bs :<c-u>w<cr>
+let g:WhichKeyDesc_save_buffer = '<leader>bs Save Buffer'
+noremap <leader>bS <action>(SaveAll)
+let g:WhichKeyDesc_save_all_buffers = '<leader>bS Save All Buffers'
+map <leader>bx <action>(SplitHorizontally)<action>(NewScratchBuffer)
+let g:WhichKeyDesc_new_scratch_buffer = '<leader>bx New Scratch Buffer'
+map <leader>by :%y+<cr>
+let g:WhichKeyDesc_yank_buffer = '<leader>by Yank Buffer'
+map <leader>bz <action>(CloseContent)
+let g:WhichKeyDesc_bury_buffer = '<leader>bz Bury Buffer'
+
+" -- Code --
+let g:WhichKeyDesc_code_leader = '<leader>c +code'
+map <leader>c[ <action>(MethodUp)
+let g:WhichKeyDesc_go_to_prev_method = '<leader>c[ Go to Previous Method'
+map <leader>c] <action>(MethodDown)
+let g:WhichKeyDesc_go_to_next_method = '<leader>c] Go to Next Method'
+map <leader>ca <action>(ShowIntentionActions)
+let g:WhichKeyDesc_exec_code_action = '<leader>ca Execute Code Action'
+map <leader>cc <action>(Compile)
+let g:WhichKeyDesc_compile = '<leader>cc Complie'
+map <leader>cC <action>(CompileDirty)
+let g:WhichKeyDesc_recompile = '<leader>cC Recompile'
+noremap <leader>cd gd
+let g:WhichKeyDesc_jump_to_def1 = 'gd Jump to Definition'
+let g:WhichKeyDesc_jump_to_def2 = '<leader>cd Jump to Definition'
+map <Leader>cD <action>(ShowUsages)
+let g:WhichKeyDesc_jump_to_ref2 = '<leader>cD Jump to References'
+map <leader>ce <action>(RunClass)
+let g:WhichKeyDesc_run_class = '<leader>ce Run Class'
+map <leader>cE <action>(RunClass)
+let g:WhichKeyDesc_debug_class = '<leader>cE Debug Class'
+map <leader>cf <action>(ReformatCode)
+let g:WhichKeyDesc_format_buffer_region = '<leader>cf Format Buffer/Region'
+map <leader>ci <action>(GotoImplementation)
+let g:WhichKeyDesc_find_impls = '<leader>ci Find Implementations'
+map <leader>cj <action>(GotoNextElementUnderCaretUsage)
+let g:WhichKeyDesc_jump_to_next_symbol= '<leader>cj Jump to Next Symbol'
+map <leader>ck <action>(QuickJavaDoc)
+let g:WhichKeyDesc_show_doc = '<leader>ck Show Documentation'
+map <leader>co <action>(OptimizeImports)
+let g:WhichKeyDesc_organize_imports = '<leader>co Organize Imports'
+map <leader>cr <action>(RenameElement)
+let g:WhichKeyDesc_rename = '<leader>cr Rename'
+map <leader>cR <action>(FindUsages)
+let g:WhichKeyDesc_ref_tree = '<leader>cR References Tree'
+map <leader>ct <action>(QuickTypeDefinition)
+let g:WhichKeyDesc_show_def = '<leader>ct Show Definition'
+map <leader>cw :%s/\s\+$//e<cr>
+let g:WhichKeyDesc_delete_trailing_whitespace = '<leader>cw Delete Trailing Whitespace'
+
+" -- File
+let g:WhichKeyDesc_file_leader = '<leader>f +file'
+map <leader>fc <action>(NewEditorConfigFile)
+let g:WhichKeyDesc_open_editorconfig = '<leader>fc Open editorconfig'
+map <leader>fC <action>(CopyElement)
+let g:WhichKeyDesc_copy_file = '<leader>fC Copy File'
+map <leader>fe :e ~/.ideavimrc<cr>
+let g:WhichKeyDesc_open_ideavimrc1 = '<leader>fe Open ideavimrc'
+map <leader>ff <action>(GotoFile)
+let g:WhichKeyDesc_find_file2 = '<leader>ff Find File'
+map <leader>fp :e ~/.ideavimrc<cr>
+let g:WhichKeyDesc_open_ideavimrc2 = '<leader>fp Open ideavimrc'
+map <leader>fr <action>(RecentFiles)
+let g:WhichKeyDesc_recent_files = '<leader>fr Recent Files'
+map <leader>fR <action>(RenameFile)
+let g:WhichKeyDesc_rename_move_file = '<leader>fR Rename file'
+noremap <leader>fs :<C-u>w<cr>
+let g:WhichKeyDesc_save_file = '<leader>fs Save File'
+map <leader>fy <action>(CopyAbsolutePath)
+let g:WhichKeyDesc_yank_file_path = '<leader>fy Yank File Path'
+
+" -- Git
+let g:WhichKeyDesc_git_leader = '<leader>g +git'
+map <leader>g' <action>(GitHub.MainMenu)
+let g:WhichKeyDesc_github_menu = "<leader>g' GitHub Menu"
+map <leader>g. <action>(Git.FileActions)
+let g:WhichKeyDesc_git_file_actions = '<leader>g. Git File Actions'
+map <leader>g/ <action>(Git.Menu)
+let g:WhichKeyDesc_git_menu = '<leader>g/ Git Menu'
+nmap <leader>g[ <action>(VcsShowPrevChangeMarker)w
+let g:WhichKeyDesc_jump_to_prev_hunk = '<leader>g[ Jump to Previous Hunk'
+nmap <leader>g] <action>(VcsShowNextChangeMarker)w
+let g:WhichKeyDesc_jump_to_next_hunk = '<leader>g] Jump to Next Hunk'
+map <leader>gb <action>(Git.Branches)
+let g:WhichKeyDesc_switch_branch = '<leader>gb Switch Branch'
+map <leader>gB <action>(Annotate)
+let g:WhichKeyDesc_blame = '<leader>gB Blame'
+map <leader>gh <action>(Vcs.ShowTabbedFileHistory)
+let g:WhichKeyDesc_git_history = '<leader>gh Git History'
+
+let g:WhichKeyDesc_git_create_leader = '<leader>gc +create'
+map <leader>gcb <action>(Git.CreateNewBranch)
+let g:WhichKeyDesc_create_branch = '<leader>gcb Branch'
+map <leader>gcc <action>(Git.Commit.Stage)
+let g:WhichKeyDesc_create_commit = '<leader>gcc Commit'
+map <leader>gcC <action>(GitShowDiffWithBranchAction)
+let g:WhichKeyDesc_show_diff = '<leader>gcC Compare'
+map <leader>gcf <action>(Git.Fixup.To.Commit)
+let g:WhichKeyDesc_create_fixup = '<leader>gcf Fixup'
+map <leader>gcp <action>(Github.Create.Pull.Request)
+let g:WhichKeyDesc_create_pr = '<leader>gcp Pull Request'
+map <leader>gcr <action>(Git.Init)
+let g:WhichKeyDesc_create_init = '<leader>gcr Init'
+map <leader>gcR <action>(Git.Clone)
+let g:WhichKeyDesc_create_clone = '<leader>gcR Clone'
+
+map <Leader>gC <Action>(Vcs.VcsClone)
+let g:WhichKeyDesc_clone = '<leader>gC Clone'
+map <Leader>gF <Action>(Git.Fetch)
+let g:WhichKeyDesc_fetch = '<leader>gF Fetch'
+map <leader>gg <action>(Vcs.Show.Local.Changes)
+let g:WhichKeyDesc_status1 = '<leader>gg Status'
+
+let g:WhichKeyDesc_git_list_leader = '<leader>gl +list'
+map <leader>glp <action>(Github.View.Pull.Request)
+let g:WhichKeyDesc_list_prs = '<leader>glp List pull requests'
+
+let g:WhichKeyDesc_git_open_leader = '<leader>go +open'
+map <leader>goo <action>(Github.Open.In.Browser)
+let g:WhichKeyDesc_browse_file_or_region = '<leader>goo Browse File or Region'
+map <leader>gop <action>(com.github.shiraji.findpullrequest.action.FindPullRequestAction)
+let g:WhichKeyDesc_browse_pr = '<leader>gop Browse a Pull Request'
+
+map <leader>gr <action>(Vcs.RollbackChangedLines)
+let g:WhichKeyDesc_revert_hunk = '<leader>gr Revert Hunk'
+map <leader>gs <action>(Vcs.Show.Local.Changes)
+let g:WhichKeyDesc_status2 = '<leader>gs Status'
+map <Leader>gS <Action>(Git.Add)
+let g:WhichKeyDesc_git_stage_file = '<leader>gS Git Stage file'
+map <leader>gt <action>(Vcs.ShowTabbedFileHistory)
+let g:WhichKeyDesc_git_time_machine = '<leader>gt Time machine'
+
+" -- Help
+let g:WhichKeyDesc_help_leader = '<leader>h +help'
+map <leader>he <action>(ActivateEventLogToolWindow)
+let g:WhichKeyDesc_event_log = '<leader>he Show Event Log'
+map <leader>hr :source ~/.ideavimrc<cr>
+let g:WhichKeyDesc_reload_config = '<leader>hr Reload Config'
+map <leader>ht <action>(ChangeLaf)
+let g:WhichKeyDesc_change_theme = '<leader>ht Change Theme'
+
+" -- Insert
+let g:WhichKeyDesc_insert_leader = '<leader>i +insert'
+nmap <leader>ie <action>(EmojiAndSymbols)
+imap <A-Space>ie <action>(EmojiAndSymbols)
+let g:WhichKeyDesc_insert_emoji_unicode1 = '<leader>ie Insert emoji/unicode'
+nmap <leader>is <action>(InsertLiveTemplate)
+imap <A-Space>is <action>(InsertLiveTemplate)
+let g:WhichKeyDesc_insert_live_template = '<leader>is Insert Live Template'
+nmap <leader>iu <action>(EmojiAndSymbols)
+imap <A-Space>iu <action>(EmojiAndSymbols)
+let g:WhichKeyDesc_insert_emoji_unicode2 = '<leader>iu Insert emoji/unicode'
+nmap <leader>iy <action>(PasteMultiple)
+imap <A-Space>iy <action>(PasteMultiple)
+let g:WhichKeyDesc_insert_from_clipboard = '<leader>iy Insert from clipboard'
+
+
+" -- Open
+let g:WhichKeyDesc_open_leader = '<leader>o +open'
+
+
+nmap <leader>od <Action>(ActivateDebugToolWindow)
+let g:WhichKeyDesc_open_debug = '<leader>od Open Debug'
+nmap <leader>oD <Action>(ActivateDatabaseToolWindow)
+let g:WhichKeyDesc_open_debug = '<leader>od Open Debug'
+nmap <Leader>of <Action>(EditSourceInNewWindow)
+let g:WhichKeyDesc_new_window = '<leader>of New window'
+nmap <Leader>oF <Action>(OpenProjectWindows)
+let g:WhichKeyDesc_select_window = '<leader>oF Select window'
+nmap <Leader>om <Action>(Maven.ExecuteGoal)
+let g:WhichKeyDesc_maven_exec = '<leader>om Maven Execute'
+noremap <Leader>op :<C-u>NERDTreeToggle<CR>
+let g:WhichKeyDesc_project_sidebar = '<leader>op Toggle Project View'
+noremap <Leader>oP :<C-u>NERDTreeFind<CR>
+let g:WhichKeyDesc_find_file_in_project_sidebar = '<leader>oP Find file in Project View'
+nmap <Leader>oo <Action>(RevealIn)
+let g:WhichKeyDesc_reveal_in_filer = '<leader>oo Reveal in filer'
+nmap <leader>or <Action>(ActivateRunToolWindow)
+let g:WhichKeyDesc_open_run = '<leader>or Open Run'
+nmap <Leader>ot <Action>(ActivateTerminalToolWindow)
+let g:WhichKeyDesc_open_terminal = '<leader>ot Open terminal'
+nmap <Leader>oT <Action>(Terminal.OpenInTerminal)
+let g:WhichKeyDesc_open_terminal_here = '<leader>oT Open terminal here'
+
+" -- Project
+let g:WhichKeyDesc_project_leader = '<leader>p +project'
+map <Leader>p! <Action>(RunAnything)
+let g:WhichKeyDesc_run_cmd_in_project_root = '<leader>p! Run cmd in project root'
+map <Leader>pi <Action>(InvalidateCaches)
+let g:WhichKeyDesc_invalidate_project_cache = '<leader>pi Invalidate project cache'
+map <Leader>pp <Action>(ManageRecentProjects)
+let g:WhichKeyDesc_switch_projects = '<leader>pp Switch projects'
+map <Leader>pt <Action>(ActivateTODOToolWindow)
+let g:WhichKeyDesc_show_todo = '<leader>pt Show TODO'
+map <Leader>pz <Action>(RunAnything)
+let g:WhichKeyDesc_list_project_tasks = '<leader>pz List project tasks'
+map <Leader>pR <Action>(Run)
+let g:WhichKeyDesc_run_project = '<leader>pR Run project'
+
+let g:WhichKeyDesc_toggle_leader = '<leader>t +toggle'
+" Presentation Mode
+map <Leader>tb <Action>(TogglePresentationMode)
+let g:WhichKeyDesc_toggle_presentation_mode = '<leader>tb Presentation Mode'
+" Line numbers
+map <Leader>tl <Action>(EditorToggleShowLineNumbers)
+let g:WhichKeyDesc_toggle_line_numbers = '<leader>tl Line numbers'
+" Read-only mode
+map <Leader>tr <Action>(ToggleReadOnlyAttribute)
+let g:WhichKeyDesc_toggle_readonly_mode = '<leader>tr Read-only mode'
+" Soft line wrapping
+map <Leader>tw <Action>(EditorToggleUseSoftWraps)
+let g:WhichKeyDesc_toggle_soft_line_wrapping = '<leader>tw Soft line wrapping'
+" Distraction Free Mode
+map <Leader>tz <Action>(ToggleDistractionFreeMode)
+let g:WhichKeyDesc_toggle_distraction_free_mode = '<leader>tz Distraction Free Mode'
+" Zen Mode
+map <Leader>tZ <Action>(ToggleZenMode)
+let g:WhichKeyDesc_toggle_zen_mode = '<leader>tZ Zen Mode'
+" Fullscreen
+map <Leader>tF <Action>(ToggleFullScreen)
+let g:WhichKeyDesc_toggle_fullscreen = '<leader>tF Fullscreen'
+
+" +search
+let g:WhichKeyDesc_search_leader = '<leader>s +search'
+" Search project
+map <Leader>sp <Action>(FindInPath)
+let g:WhichKeyDesc_search_project2 = '<leader>sp Search project'
+
+" +window
+let g:WhichKeyDesc_window_leader = '<leader>w +window'
+noremap <Leader>wc <C-w>c
+noremap <Leader>wd <C-w>c
+noremap <Leader>wh <C-w>h
+noremap <Leader>wj <C-w>j
+noremap <Leader>wk <C-w>k
+noremap <Leader>wl <C-w>l
+noremap <Leader>ws <C-w>s
+noremap <Leader>wv <C-w>v
+noremap <Leader>ww <C-w>w
+noremap <Leader>wW <C-w>W
+noremap <Leader>wq <C-w>c
+" Maximize window
+noremap <Leader>wm <Action>(Unsplit)

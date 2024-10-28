@@ -1,0 +1,32 @@
+* Git Bare Dotfiles
+** Restoring
+#+begin_src sh
+echo 'alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"' >>$HOME/.bashrc && source ~/.bashrc
+git clone --bare git@github.com:g0rdonL/dotfiles.git $HOME/.dotfiles && dotfiles checkout -f
+#+end_src
+
+** Mac OS
+*** Homebrew
+In
+#+begin_src sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+#+end_src
+
+** Change default shell to Fish
+#+begin_src sh
+chsh -s /usr/bin/fish
+#+end_src
+
+*** Install Rime Cantonese
+#+begin_src sh
+curl -fsSL https://git.io/rime-install | bash -s -- cantonese emoji CanCLID/rime-loengfan custom:set:config=default,key=installed_from,value=rime-cantonese custom:clear_schema_list custom:add:schema=jyut6ping3 custom:add:schema=cangjie5 custom:add:schema=stroke custom:add:schema=luna_pinyin lotem/rime-octagram-data lotem/rime-octagram-data@hant lotem/rime-octagram-data:customize:schema=jyut6ping3,model=hant
+curl -fsSL https://git.io/rime-install | bash -s -- canclid/rime-cantonese-schemes:install:scheme=yale
+#+end_src
+
+** Install Doom Emacs
+#+begin_src sh
+git clone --depth 1 https://github.com/doomemacs/doomemacs ~/.emacs.d && ~/.emacs.d/bin/doom install
+#+end_src
+
+#+RESULTS:
+

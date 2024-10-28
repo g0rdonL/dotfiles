@@ -1,0 +1,27 @@
+/* https://leetcode.com/problems/ */
+.mtk3 {
+    color: #6272a4;
+}
+.mtk10 {
+    color: #8be9fd;
+}
+.mtk4,
+.mtk13 {
+    color: #ff79c6;
+}
+.mtk11 {
+    color: #50fa7b;
+}
+.mtk8 {
+    color: #f1fa8c;
+}
+.mtk14,
+.mtk1 {
+    color: #f8f8f2;
+}
+.mtk14 + .mtk1 + .mtk14 {
+    color: #bd93f9;
+}
+:root {
+    --dark-gray-20: #282a36;
+}

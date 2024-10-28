@@ -1,0 +1,26 @@
+swipe:
+  3:
+    left:
+      command: "xdotool key alt+Left"
+    right:
+      command: "xdotool key alt+Right"
+  4:
+    right:
+      command: "qtile cmd-obj -o screen -f next_group"
+    left:
+      command: "qtile cmd-obj -o screen -f prev_group"
+    up:
+      command: "qtile cmd-obj -o group 'win' -f toscreen"
+pinch:
+  in:
+    command: "xdotool key ctrl+equal"
+  out:
+    command: "xdotool key ctrl+minus"
+
+threshold:
+  swipe: 0.5
+  pinch: 0.5
+
+interval:
+  swipe: 1
+  pinch: 1
