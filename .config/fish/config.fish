@@ -99,6 +99,7 @@ fundle plugin 'patrickf1/fzf.fish'
 fundle plugin 'andreiborisov/sponge'
 fundle plugin 'jorgebucaran/autopair.fish'
 fundle plugin 'pure-fish/pure'
+fundle plugin 'danhper/fish-ssh-agent'
 fundle init
 
 
