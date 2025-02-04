@@ -30,37 +30,37 @@ imap jk <esc>
 imap Jk <esc>
 imap JK <esc>
 nnoremap w [w
-nnoremap e ]e
+nnoremap e ]w
 nnoremap b [b
 nnoremap ge ]ge
 
 nnoremap 2w 2[w
-nnoremap 2e 2]e
+nnoremap 2e 2]w
 nnoremap 2b 2[b
 nnoremap 2ge 2]ge
 
 nnoremap cw c[w
-nnoremap ce c]e
+nnoremap ce c]w
 nnoremap cb c[b
 nnoremap cge c]ge
 
 nnoremap c2w c2[w
-nnoremap c2e c2]e
+nnoremap c2e c2]w
 nnoremap c2b c2[b
 nnoremap c2ge c2]ge
 
 nnoremap dw d[w
-nnoremap de d]e
+nnoremap de d]w
 nnoremap db d[b
 nnoremap dge d]ge
 
 nnoremap d2w d2[w
-nnoremap d2e d2]e
+nnoremap d2e d2]w
 nnoremap d2b d2[b
 nnoremap d2ge d2]ge
 
 vnoremap w [w
-vnoremap e ]e
+vnoremap e ]w
 vnoremap b [b
 vnoremap ge ]ge
 map s <Action>(Find)
